@@ -12,3 +12,6 @@ create table DRIVERS (
 select * from DRIVERS
 where status = 'AVAILABLE' and trust_score > 80
 order by distance_km ASC, trust_score DESC;
+
+-- Nếu min_trust_score bị nhập nhầm thành số âm thì logic sẽ bị phá vỡ bởi vì:
+	-- Khi  min_trust_score = -10 thì => mọi tài xế dều hợp lệ điều này khiến cho bộ lọc không thể chinh xác 
